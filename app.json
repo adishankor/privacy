@@ -1,0 +1,68 @@
+{
+  "expo": {
+    "name": "LuminaFi",
+    "slug": "luminafi",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "luminafi",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#050508"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.adishankor.luminafi",
+      "buildNumber": "2",
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "LuminaFi uses Face ID to protect your financial data.",
+        "NSCameraUsageDescription": "LuminaFi uses the camera to scan receipts.",
+        "NSPhotoLibraryUsageDescription": "LuminaFi accesses your photos to attach receipts."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#050508"
+      },
+      "package": "com.adishankor.luminafi",
+      "versionCode": 2,
+      "permissions": [
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "INTERNET",
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE"
+      ],
+      "googleServicesFile": "./google-services.json"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-font",
+      ["expo-image-picker", {
+        "photosPermission": "LuminaFi accesses photos to attach receipts."
+      }],
+      ["expo-document-picker", {
+        "iCloudContainerEnvironment": "Production"
+      }],
+      ["expo-notifications", {
+        "icon": "./assets/images/logo_mark.png",
+        "color": "#7C3AED"
+      }],
+      ["expo-local-authentication", {
+        "faceIDPermission": "LuminaFi uses Face ID to protect your financial data."
+      }]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "YOUR_EAS_PROJECT_ID"
+      }
+    }
+  }
+}
